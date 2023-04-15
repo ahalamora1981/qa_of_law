@@ -93,7 +93,8 @@ with st.sidebar:
     )
     chunk_size = st.radio(
         "请选择Chunk大小：",
-        ("300", "500")
+        ("300", "500"),
+        horizontal=True
     )
     if st.button("加载法律法规"):
         doc = Document(LAWS[law])
