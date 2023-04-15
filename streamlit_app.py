@@ -100,7 +100,9 @@ with st.sidebar:
         doc = Document(LAWS[law])
         doc.load_embedding(chunk_size=chunk_size)
 
+col1, col2 = st.columns(2)
+
+with col1:
 if "doc" in locals() or "doc" in globals():
-#     st.text(doc.text)
-    st.text(doc.chunks)
+    st.text(doc.text)
     
