@@ -111,8 +111,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     if "doc" in locals() or "doc" in globals():
-        st.subheader(law+":")
-        st.text_area("", doc.text, height=500)
+        st.text_area(law+":", doc.text, height=500)
 
 with col2:
     input_text = st.text_input("您想问什么法律问题？", "请输入")
