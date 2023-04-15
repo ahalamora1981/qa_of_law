@@ -115,7 +115,7 @@ with col1:
 
 with col2:
     if "doc" in st.session_state:
-        input_text = st.text_input("您想问什么法律问题？", "")
+        input_text = st.text_input("请提问：", "")
         if st.button("提交", use_container_width=True):
             sorted_chunks = st.session_state["doc"].get_similar_chunk(input_text, int(top_n_chunks))
             reference = ""
@@ -130,4 +130,4 @@ with col2:
                     {"role": "user", "content": f"### 参考文档 ###\n{reference}### 用户问题 ###\n{input_text}"}
                 ])
             res_text = response['choices'][0]['message']['content']
-            st.text_area("法律机器人：", res_text)
+            st.text_area("法律机器人：", res_text, height=500)
