@@ -84,7 +84,7 @@ class Document:
         return sorted_chunks
 
 
-st.markdown("<h2 style='text-align: center;'>法律问答机器人</h2>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>法律问答机器人</h1>", unsafe_allow_html=True)
 
 with st.sidebar:
     law = st.selectbox(
