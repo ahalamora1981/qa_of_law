@@ -39,8 +39,8 @@ class Document:
             self.name = doc_name
             self.text = f.read().replace("\u3000", "")
 
-    def load_embedding(self, chunk_size="300", overlap_size="100"):
-        with open(self.embedding_path[self.name]+"_"+chunk_size+"_"+overlap_size+".json", "r", encoding="utf-8") as f:
+    def load_embedding(self, chunk_overlap="300_100"):
+        with open(self.embedding_path[self.name]+"_"+chunk_overlap+".json", "r", encoding="utf-8") as f:
             self.chunks = json.load(f)
 
     def split(self, chunk_size, overlap_size):
@@ -92,9 +92,9 @@ with st.sidebar:
         "请选择法律法规：",
         ("公司法", "劳动法", "婚姻法")
     )
-    chunk_size = st.radio(
+    chunk_overlap = st.radio(
         "请选择 Chunk/Overlap 大小：",
-        ("300/100", "500/100"),
+        ("300_100", "500_100"),
         horizontal=True
     )
     if st.button("加载法律法规"):
