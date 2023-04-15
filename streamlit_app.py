@@ -84,7 +84,7 @@ class Document:
         return sorted_chunks
 
 
-st.title(<p style='text-align: center;'>法律问答机器人</p>)
+st.markdown("<h2 style='text-align: center;'>法律问答机器人</h2>")
 
 with st.sidebar:
     law = st.selectbox(
