@@ -99,7 +99,7 @@ with st.sidebar:
         doc = Document(LAWS[law])
         doc.load_embedding(chunk_size=chunk_size)
 
-if doc:
+if "doc" in locals() or "doc" in globals():
     st.text(doc.text)
     st.text(doc.chunks)
     
