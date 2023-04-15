@@ -99,7 +99,7 @@ with st.sidebar:
     )
     if st.button("加载法律法规"):
         st.session_state["doc"] = Document(LAWS[law])
-        st.session_state["doc"].load_embedding(chunk_size=chunk_size)
+        st.session_state["doc"].load_embedding(chunk_overlap=chunk_overlap)
     st.markdown("---")
     top_n_chunks = st.radio(
         "请选择参考Chunk的数量：",
