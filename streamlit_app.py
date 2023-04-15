@@ -114,19 +114,20 @@ with col1:
         st.text_area(law+":", doc.text, height=600)
 
 with col2:
-    input_text = st.text_input("您想问什么法律问题？", "请输入")
     if "doc" in locals() or "doc" in globals():
-        sorted_chunks = doc.get_similar_chunk(input_text, int(top_n_chunks))
-        reference = ""
+        input_text = st.text_input("您想问什么法律问题？", "")
+        if st.button("提交", use_container_width=True):
+            sorted_chunks = doc.get_similar_chunk(input_text, int(top_n_chunks))
+            reference = ""
 
-        for chunk in sorted_chunks:
-            reference += chunk["text"] + "\n\n"
-        
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "请根据参考文档回答用户问题，并给出参考的条目在第几条。禁止提供不在参考文档内的内容。"},
-                {"role": "user", "content": f"### 参考文档 ###\n{reference}### 用户问题 ###\n{input_text}"}
-            ])
-        res_text = response['choices'][0]['message']['content']
-        st.text_area("法律机器人：", res_text)
+            for chunk in sorted_chunks:
+                reference += chunk["text"] + "\n\n"
+
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "请根据参考文档回答用户问题，并给出参考的条目在第几条。禁止提供不在参考文档内的内容。"},
+                    {"role": "user", "content": f"### 参考文档 ###\n{reference}### 用户问题 ###\n{input_text}"}
+                ])
+            res_text = response['choices'][0]['message']['content']
+            st.text_area("法律机器人：", res_text)
