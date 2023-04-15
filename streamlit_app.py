@@ -101,7 +101,7 @@ with st.sidebar:
         st.session_state["doc"] = Document(LAWS[law])
         st.session_state["doc"].load_embedding(chunk_overlap=chunk_overlap)
     st.markdown("---")
-    top_n_chunks = st.radio(
+    top_n_chunks == st.radio(
         "请选择参考Chunk的数量：",
         ("2", "3", "4", "5"),
         horizontal=True
