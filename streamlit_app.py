@@ -106,6 +106,10 @@ with st.sidebar:
         ("2", "3", "4", "5"),
         horizontal=True
     )
+    st.markdown("---")
+    system_prompt = st.text_input("系统提示语：", "请根据参考文档回答用户问题，并给出参考的条目在第几条。禁止提供不在参考文档内的内容。")
+    if system_prompt.strip() = "":
+        system_prompt = "请根据参考文档回答用户问题，并给出参考的条目在第几条。禁止提供不在参考文档内的内容。"
 
 col1, col2 = st.columns(2)
 
@@ -126,7 +130,7 @@ with col2:
             response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[
-                    {"role": "system", "content": "请根据参考文档回答用户问题，并给出参考的条目在第几条。禁止提供不在参考文档内的内容。"},
+                    {"role": "system", "content": system_prompt},
                     {"role": "user", "content": f"### 参考文档 ###\n{reference}### 用户问题 ###\n{input_text}"}
                 ])
             res_text = response['choices'][0]['message']['content']
