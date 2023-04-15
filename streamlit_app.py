@@ -6,7 +6,7 @@ import pandas as pd
 import streamlit as st
 from openai.embeddings_utils import cosine_similarity
 
-
+st.set_page_config (layout="wide")
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 
 LAWS = {
