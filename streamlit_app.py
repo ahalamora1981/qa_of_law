@@ -85,6 +85,7 @@ class Document:
 
 
 st.markdown("<h1 style='text-align: center;'>法律问答机器人</h1>", unsafe_allow_html=True)
+st.markdown("---")
 
 with st.sidebar:
     law = st.selectbox(
