@@ -104,6 +104,6 @@ col1, col2 = st.columns(2)
 
 with col1:
     if "doc" in locals() or "doc" in globals():
-        st.header(law+":")
+        st.subheader(law+":")
         st.text(doc.text)
     
