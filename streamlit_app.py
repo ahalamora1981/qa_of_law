@@ -93,8 +93,8 @@ with st.sidebar:
         ("公司法", "劳动法", "婚姻法")
     )
     chunk_size = st.radio(
-        "请选择Chunk大小：",
-        ("300", "500"),
+        "请选择 Chunk/Overlap 大小：",
+        ("300/100", "500/100"),
         horizontal=True
     )
     if st.button("加载法律法规"):
