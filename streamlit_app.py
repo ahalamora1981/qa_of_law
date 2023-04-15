@@ -93,7 +93,7 @@ with st.sidebar:
         ("公司法", "劳动法", "婚姻法")
     )
     chunk_overlap = st.radio(
-        "请选择 Chunk/Overlap 大小：",
+        "请选择 Chunk_Overlap 大小：",
         ("300_100", "500_100"),
         horizontal=True
     )
