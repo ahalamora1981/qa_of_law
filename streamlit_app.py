@@ -103,6 +103,6 @@ with st.sidebar:
 col1, col2 = st.columns(2)
 
 with col1:
-if "doc" in locals() or "doc" in globals():
-    st.text(doc.text)
+    if "doc" in locals() or "doc" in globals():
+        st.text(doc.text)
     
