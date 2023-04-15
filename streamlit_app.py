@@ -98,7 +98,8 @@ with st.sidebar:
     if st.button("加载法律法规"):
         doc = Document(LAWS[law])
         doc.load_embedding(chunk_size=chunk_size)
-        
-st.text(doc.text)
-st.text(doc.chunks)
+
+if doc:
+    st.text(doc.text)
+    st.text(doc.chunks)
     
