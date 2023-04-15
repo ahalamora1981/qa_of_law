@@ -19,15 +19,15 @@ LAWS = {
 class Document:
 
     laws_path = {
-        "labor": "/content/gdrive/MyDrive/Colab Notebooks/AI_NLP/Langchain/法律/中华人民共和国劳动法(2018-12).txt",
-        "marriage": "/content/gdrive/MyDrive/Colab Notebooks/AI_NLP/Langchain/法律/中华人民共和国婚姻法(2005-05).txt",
-        "company": "/content/gdrive/MyDrive/Colab Notebooks/AI_NLP/Langchain/法律/中华人民共和国公司法(2018-10).txt"
+        "labor": "data/中华人民共和国劳动法(2018-12).txt",
+        "marriage": "data/中华人民共和国婚姻法(2005-05).txt",
+        "company": "data/中华人民共和国公司法(2018-10).txt"
     }
 
     embedding_path = {
-        "labor": "/content/gdrive/MyDrive/Colab Notebooks/AI_NLP/Langchain/法律/labor_embedding",
-        "marriage": "/content/gdrive/MyDrive/Colab Notebooks/AI_NLP/Langchain/法律/marriage_embedding",
-        "company": "/content/gdrive/MyDrive/Colab Notebooks/AI_NLP/Langchain/法律/company_embedding"
+        "labor": "data/labor_embedding",
+        "marriage": "data/marriage_embedding",
+        "company": "data/company_embedding"
     }
 
     @property
