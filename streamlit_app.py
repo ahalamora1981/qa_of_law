@@ -107,7 +107,7 @@ with st.sidebar:
         horizontal=True
     )
     st.markdown("---")
-    system_prompt = st.text_input("系统提示语：", "请根据参考文档回答用户问题，并给出参考的条目在第几条。禁止提供不在参考文档内的内容。")
+    system_prompt = st.text_area("系统提示语：", "请根据参考文档回答用户问题，并给出参考的条目在第几条。禁止提供不在参考文档内的内容。")
     if system_prompt.strip() == "":
         system_prompt = "请根据参考文档回答用户问题，并给出参考的条目在第几条。禁止提供不在参考文档内的内容。"
 
