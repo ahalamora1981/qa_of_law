@@ -101,7 +101,11 @@ with st.sidebar:
         doc = Document(LAWS[law])
         doc.load_embedding(chunk_size=chunk_size)
     st.markdown("---")
-    top_n_chunks = st.slider("参考的Chunk数量：", 2, 5, 1)
+    top_n_chunks = st.radio(
+        "请选择参考Chunk的数量：",
+        ("2", "3", "4", "5"),
+        horizontal=True
+    )
 
 col1, col2 = st.columns(2)
 
