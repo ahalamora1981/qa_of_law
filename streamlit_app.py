@@ -98,8 +98,8 @@ with st.sidebar:
         horizontal=True
     )
     if st.button("加载法律法规"):
-        doc = Document(LAWS[law])
-        doc.load_embedding(chunk_size=chunk_size)
+        st.session_state["doc"] = Document(LAWS[law])
+        st.session_state["doc"].load_embedding(chunk_size=chunk_size)
     st.markdown("---")
     top_n_chunks = st.radio(
         "请选择参考Chunk的数量：",
@@ -110,14 +110,14 @@ with st.sidebar:
 col1, col2 = st.columns(2)
 
 with col1:
-    if "doc" in locals() or "doc" in globals():
-        st.text_area(law+":", doc.text, height=600)
+    if "doc" in st.session_state:
+        st.text_area(law+":", st.session_state["doc"].text, height=600)
 
 with col2:
-    if "doc" in locals() or "doc" in globals():
+    if "doc" in st.session_state:
         input_text = st.text_input("您想问什么法律问题？", "")
         if st.button("提交", use_container_width=True):
-            sorted_chunks = doc.get_similar_chunk(input_text, int(top_n_chunks))
+            sorted_chunks = st.session_state["doc"].get_similar_chunk(input_text, int(top_n_chunks))
             reference = ""
 
             for chunk in sorted_chunks:
