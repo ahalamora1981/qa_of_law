@@ -100,11 +100,15 @@ with st.sidebar:
     if st.button("加载法律法规"):
         doc = Document(LAWS[law])
         doc.load_embedding(chunk_size=chunk_size)
+    st.markdown("---")
+    top_n_chunks = st.slider("参考的Chunk数量：", 2, 5, 1)
 
 col1, col2 = st.columns(2)
 
 with col1:
     if "doc" in locals() or "doc" in globals():
         st.subheader(law+":")
-        st.text(doc.text)
-    
+        st.text_area(text_area, doc.text, height=600)
+
+with col2:
+    input_text = st.text_input("您想问什么法律问题？", "请输入")
