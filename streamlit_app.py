@@ -84,7 +84,7 @@ class Document:
         return sorted_chunks
 
 
-st.markdown("<h1 style='text-align: center;'>法律问答机器人</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'>法律问答机器人</h2>", unsafe_allow_html=True)
 st.markdown("---")
 
 with st.sidebar:
@@ -111,7 +111,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     if "doc" in locals() or "doc" in globals():
-        st.text_area(law+":", doc.text, height=500)
+        st.text_area(law+":", doc.text, height=600)
 
 with col2:
     input_text = st.text_input("您想问什么法律问题？", "请输入")
