@@ -116,7 +116,7 @@ with col1:
 with col2:
     input_text = st.text_input("您想问什么法律问题？", "请输入")
     if "doc" in locals() or "doc" in globals():
-        sorted_chunks = doc.get_similar_chunk(input_text, num_chunks)
+        sorted_chunks = doc.get_similar_chunk(input_text, top_n_chunks)
         reference = ""
 
         for chunk in sorted_chunks:
