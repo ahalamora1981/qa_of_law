@@ -95,6 +95,7 @@ with st.sidebar:
     chunk_overlap = st.radio(
         "请选择 Chunk_Overlap 大小：",
         ("300_100", "500_100"),
+        index=1,
         horizontal=True
     )
     if st.button("加载法律法规"):
