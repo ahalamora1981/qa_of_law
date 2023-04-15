@@ -104,6 +104,7 @@ with st.sidebar:
     top_n_chunks = st.radio(
         "请选择参考Chunk的数量：",
         ("2", "3", "4", "5"),
+        index=1,
         horizontal=True
     )
     st.markdown("---")
