@@ -130,4 +130,4 @@ with col2:
                     {"role": "user", "content": f"### 参考文档 ###\n{reference}### 用户问题 ###\n{input_text}"}
                 ])
             res_text = response['choices'][0]['message']['content']
-            st.text_area("法律机器人：", res_text, height=500)
+            st.text_area("法律机器人：", res_text, height=460)
